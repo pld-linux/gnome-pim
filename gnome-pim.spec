@@ -172,5 +172,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gnome-pilot/conduits/*.so*
 %{_pixmapsdir}/gnome-calendar-conduit.png
-%{_datadir}/gnome-pilot/conduits/*
+#%{_datadir}/gnome-pilot/conduits/gnomecal*
+%{_datadir}/gnome-pilot/conduits/gnomecar*
 %endif
