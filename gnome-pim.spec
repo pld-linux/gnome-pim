@@ -1,7 +1,7 @@
 Summary:	GNOME Personal Information Manager
 Summary(pl):	Osobisty terminarz i mened¿er harmonogramów
 Name:		gnome-pim
-Version:	1.3.2
+Version:	1.4.0
 Release:	1
 Epoch:		1
 License:	GPL
@@ -39,10 +39,11 @@ present:
 - gnomecard - contact list of friends and business associates
 
 %description -l pl
-Pakiet zawiera aplikacje robi±ce Twoje zapracowane ¿ycie prostrzym. Aktualnie
-dwie aplikacje s± obecne:
+Pakiet zawiera aplikacje robi±ce Twoje zapracowane ¿ycie prostrzym.
+Aktualnie dwie aplikacje s± obecne:
 - gnomecal - prywatny terminarz i lista zadañ
-- gnomecard - notatnik z kontaktami przyjació³ oraz partnerów biznesowych
+- gnomecard - notatnik z kontaktami przyjació³ oraz partnerów
+  biznesowych
 
 %prep
 %setup  -q
