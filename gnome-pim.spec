@@ -4,7 +4,7 @@ Summary(pl):	Osobisty terminarz i mened¿er harmonogramów
 Summary(pt_BR):	O gerenciador de informações pessoais do GNOME
 Name:		gnome-pim
 Version:	1.4.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
@@ -15,6 +15,7 @@ Patch2:		%{name}-macros.patch
 Patch3:		%{name}-gnomecal.patch
 Patch4:		%{name}-am15.patch
 Patch5:		%{name}-missing_gnomecard_help.patch
+Patch6:		%{name}-pl.patch
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
 Requires:	gnome-libs => 1.0.5
@@ -76,6 +77,7 @@ disponíveis:
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 %build
 rm -f missing
