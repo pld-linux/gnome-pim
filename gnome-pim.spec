@@ -47,7 +47,7 @@ GNOME pim libraries, includes, etc.
 autoconf
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 CXXFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-exceptions -fno-implicit-templates" \
-./configure %{_target} \
+./configure %{_target_platform} \
 	--prefix=/usr/X11R6 \
 	--sysconfdir=/etc/X11/GNOME \
 	--without-included-gettext
