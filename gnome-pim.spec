@@ -3,7 +3,8 @@ Name:		gnome-pim
 Version:	1.0.7
 Release:	1
 Copyright:	GPL
-Group:		X11/Applications
+Group:		X11/GNOME/Applications
+Group(pl):	X11/GNOME/Aplikacje
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gnome-pim/%{name}-%{version}.tar.gz
 Patch:		gnome-pim-DESTDIR.patch
 Icon:		gnome-pim.gif
@@ -40,7 +41,7 @@ GNOME pim libraries, includes, etc.
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" CXXFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure \
+./configure %{_target} \
 	--prefix=/usr/X11R6 \
 	--sysconfdir=/etc/X11/GNOME \
 	--without-included-gettext
@@ -51,12 +52,14 @@ rm -rf $RPM_BUILD_ROOT
 
 make DESTDIR=$RPM_BUILD_ROOT install
 
+gzip -9fn AUTHORS ChangeLog NEWS README
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644, root, root, 755)
-%doc AUTHORS ChangeLog NEWS README
+%defattr(644,root,root,755)
+%doc {AUTHORS,ChangeLog,NEWS,README}.gz
 
 %lang(de) /usr/X11R6/share/locale/de/LC_MESSAGES/gnome-pim.mo
 %lang(es) /usr/X11R6/share/locale/es/LC_MESSAGES/gnome-pim.mo
