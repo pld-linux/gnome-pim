@@ -1,7 +1,8 @@
 Summary:	GNOME Personal Information Manager
+Summary(pl):	Osobisty terminarz i mened¿er harmonogramów
 Name:		gnome-pim
-Version:	1.2.0
-Release:	8
+Version:	1.3.2
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
@@ -20,9 +21,11 @@ BuildRequires:	pilot-link-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	imlib-devel
 BuildRequires:	ORBit-devel
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes:	gnome
+BuildRequires:	libstdc++-devel
+BuildRequires:	flex
+BuildRequires:	docbook-style-dsssl
 Obsoletes:	gnome-pim-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
@@ -35,15 +38,11 @@ present:
 - gnomecal - personal calendar and todo list
 - gnomecard - contact list of friends and business associates
 
-%package devel
-Summary:	GNOME pim libraries, includes, etc
-Group:		X11/Development/Libraries
-Group(de):	X11/Entwicklung/Libraries
-Group(pl):	X11/Programowanie/Biblioteki
-Requires:	%{name} = %{version}
-
-%description devel
-GNOME pim libraries, includes, etc.
+%description -l pl
+Pakiet zawiera aplikacje robi±ce Twoje zapracowane ¿ycie prostrzym. Aktualnie
+dwie aplikacje s± obecne:
+- gnomecal - prywatny terminarz i lista zadañ
+- gnomecard - notatnik z kontaktami przyjació³ oraz partnerów biznesowych
 
 %prep
 %setup  -q
@@ -80,4 +79,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_applnkdir}/Office/PIMs/*
 %{_datadir}/gnome/help/*
 %{_datadir}/mime-info/gnome-pim.keys
+%{_datadir}/idl/*
 %{_pixmapsdir}/*
