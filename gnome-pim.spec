@@ -83,18 +83,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
 %{_datadir}/idl/*
-
-%changelog
-* Fri May 14 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.0.7-2]
-- group for devel changed to X11/GNOME/Development/Libraries,
-- added -fno-rtti -fno-exceptions -fno-implicit-templates to C++
-  optimization options.
-
-* Fri May 14 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.0.7-2]
-- added BuildPrereq rules.
-
-* Fri Apr  9 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.0.7-1]
-- first version in rpm package for PLD.
