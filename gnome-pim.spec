@@ -1,7 +1,7 @@
 Summary:	GNOME Personal Information Manager
 Summary(es):	El administrador de informaciones personales del GNOME
 Summary(ja):	The GNOME ╦д©м╬ПйС╢имЩ╔ч╔м║╪╔╦╔Ц
-Summary(pl):	Osobisty terminarz i mened©er harmonogramСw
+Summary(pl):	Osobisty terminarz i zarz╠dzanie list╠ zadaЯ
 Summary(pt_BR):	O gerenciador de informaГУes pessoais do GNOME
 Summary(ru):	Персональный информационный менеджер (PIM) для GNOME
 Summary(uk):	Персональний ╕нформац╕йний менеджер (PIM) для GNOME
@@ -63,16 +63,15 @@ aplicaciones estАn presentes:
 GNOME ╦д©м╬ПйС╢имЩ╔ч╔м║╪╔╦╔Ц╓к╓о║╒к╩╓╥╓╓кХфЭ╓Р╓а╓Г╓ц╓хЁз╓к╓╥╓ф╓╞╓Л
 ╓К╔╒╔в╔Й╔╠║╪╔╥╔Г╔С╓╛╢ч╓ч╓Л╓ф╓╓╓ч╓╧║ё
 ╦╫╨ъ║╒╟й╡╪╓н╔╒╔в╔Й╔╠║╪╔╥╔Г╔С╓╛╩х╓╗╓ч╓╧:
-
- - gnomecal : ╔я║╪╔╫╔й╔К╓й╔╚╔Л╔С╔ю║╪╓х To Do ╔Й╔╧╔х
- - gnomecard: м╖©м╓Д╔с╔╦╔м╔╧╢ь╥╦╪т╓но╒мМюХ╔Й╔╧╔х
+- gnomecal : ╔я║╪╔╫╔й╔К╓й╔╚╔Л╔С╔ю║╪╓х To Do ╔Й╔╧╔х
+- gnomecard: м╖©м╓Д╔с╔╦╔м╔╧╢ь╥╦╪т╓но╒мМюХ╔Й╔╧╔х
 
 %description -l pl
-Pakiet zawiera aplikacje robi╠ce Twoje zapracowane ©ycie prostrzym.
-Aktualnie dwie aplikacje s╠ obecne:
+Pakiet zawiera aplikacje czyni╠ce Twoje zapracowane ©ycie prostszym.
+Aktualnie zawiera dwie aplikacje:
 - gnomecal : prywatny terminarz i lista zadaЯ
-- gnomecard: notatnik z kontaktami przyjaciСЁ oraz partnerСw
-  biznesowych.
+- gnomecard: notatnik z kontaktami przyjaciСЁ oraz partnerСw w
+  interesach.
 
 %description -l pt_BR
 O gerente de informaГУes pessoais do GNOME consiste de aplicaГУes para
@@ -85,16 +84,14 @@ disponМveis:
 Персональный информационный менеджер состоит из приложений,
 облегчающих жизнь занятых людей. В настоящее время это следующие
 программы:
-
- - gnomecal : персональный календарь и список дел (todo)
- - gnomecard: список контактов
+- gnomecal : персональный календарь и список дел (todo)
+- gnomecard: список контактов
 
 %description -l uk
 Персональний ╕нформац╕йний менеджер склада╓ться з прикладних програм,
 що полегшують життя зайнятих людей. Нараз╕ це наступн╕ програми:
-
- - gnomecal : персональний календар та список справ (todo)
- - gnomecard: список контакт╕в
+- gnomecal : персональний календар та список справ (todo)
+- gnomecard: список контакт╕в
 
 %prep
 %setup  -q
