@@ -1,0 +1,75 @@
+--- gnome-pim-1.2.0/gncal/gnome-month-item.c.orig	Wed Sep 13 11:59:03 2000
++++ gnome-pim-1.2.0/gncal/gnome-month-item.c	Wed Sep 13 12:01:59 2000
+@@ -12,7 +12,7 @@
+ #include "gnome-month-item.h"
+ 
+ 
+-#define DEFAULT_FONT "-*-helvetica-medium-r-normal--10-*-*-*-p-*-*-*"
++#define DEFAULT_FONT "-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*"
+ 
+ 
+ /* Number of days in a month, for normal and leap years */
+@@ -772,15 +772,13 @@
+ 
+ 	/* Load the default fonts */
+ 
+-	mitem->head_font = gdk_font_load (DEFAULT_FONT);
++	mitem->head_font = gdk_fontset_load (DEFAULT_FONT);
+ 	if (!mitem->head_font) {
+-		mitem->head_font = gdk_font_load ("fixed");
+ 		g_assert (mitem->head_font != NULL);
+ 	}
+ 
+-	mitem->day_font = gdk_font_load (DEFAULT_FONT);
++	mitem->day_font = gdk_fontset_load (DEFAULT_FONT);
+ 	if (!mitem->day_font) {
+-		mitem->day_font = gdk_font_load ("fixed");
+ 		g_assert (mitem->day_font != NULL);
+ 	}
+ }
+@@ -971,9 +969,8 @@
+ 	case ARG_HEAD_FONT:
+ 		gdk_font_unref (mitem->head_font);
+ 
+-		mitem->head_font = gdk_font_load (GTK_VALUE_STRING (*arg));
++		mitem->head_font = gdk_fontset_load (DEFAULT_FONT);
+ 		if (!mitem->head_font) {
+-			mitem->head_font = gdk_font_load ("fixed");
+ 			g_assert (mitem->head_font != NULL);
+ 		}
+ 
+@@ -984,10 +981,8 @@
+ 	case ARG_HEAD_FONTSET:
+ 		gdk_font_unref (mitem->head_font);
+ 
+-		mitem->head_font = gdk_fontset_load (GTK_VALUE_STRING (*arg));
++		mitem->head_font = gdk_fontset_load (DEFAULT_FONT);
+ 		if (!mitem->head_font) {
+-			mitem->head_font =
+-			  gdk_fontset_load ("-*-fixed-medium-r-semicondensed--13-120-75-75-c-60-*-*");
+ 			g_assert (mitem->head_font != NULL);
+ 		}
+ 
+@@ -1007,9 +1002,8 @@
+ 	case ARG_DAY_FONT:
+ 		gdk_font_unref (mitem->day_font);
+ 
+-		mitem->day_font = gdk_font_load (GTK_VALUE_STRING (*arg));
++		mitem->day_font = gdk_fontset_load (DEFAULT_FONT);
+ 		if (!mitem->day_font) {
+-			mitem->day_font = gdk_font_load ("fixed");
+ 			g_assert (mitem->day_font != NULL);
+ 		}
+ 
+@@ -1020,10 +1014,8 @@
+ 	case ARG_DAY_FONTSET:
+ 		gdk_font_unref (mitem->day_font);
+ 
+-		mitem->day_font = gdk_fontset_load (GTK_VALUE_STRING (*arg));
++		mitem->day_font = gdk_fontset_load (DEFAULT_FONT);
+ 		if (!mitem->day_font) {
+-			mitem->day_font =
+-			  gdk_fontset_load ("-*-fixed-medium-r-semicondensed--13-120-75-75-c-60-*-*");
+ 			g_assert (mitem->day_font != NULL);
+ 		}
+ 
