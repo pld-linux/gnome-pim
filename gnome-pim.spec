@@ -7,13 +7,13 @@ Summary(ru):	Персональный информационный менеджер (PIM) для GNOME
 Summary(uk):	Персональний ╕нформац╕йний менеджер (PIM) для GNOME
 Summary(zh_CN):	GNOME╦Жхкпео╒╧эюМ╧╓╬ъ
 Name:		gnome-pim
-Version:	1.4.0
-Release:	3
+Version:	1.4.6
+Release:	0.1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-pim/%{name}-%{version}.tar.gz
-# Source0-md5:	177daf8b1e15be906fb41dca94a00e76
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-pim/1.4/%{name}-%{version}.tar.gz
+# Source0-md5:	a694c66ab5431c8bee36323758beb3c0
 Patch0:		%{name}-fontset.patch
 Patch1:		%{name}-gettext.patch
 Patch2:		%{name}-macros.patch
@@ -99,7 +99,7 @@ disponМveis:
 
 %prep
 %setup  -q
-%patch0 -p1
+#%patch0 -p1
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
