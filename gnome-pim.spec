@@ -1,13 +1,13 @@
 Summary:	GNOME Personal Information Manager
 Name:		gnome-pim
-Version:	1.0.8
-Release:	1
+Version:	1.0.10
+Release:	2
 Copyright:	GPL
 Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gnome-pim/%{name}-%{version}.tar.gz
 Patch:		gnome-pim-DESTDIR.patch
-Icon:		gnome-pim.gif
+Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
 Requires:	gnome-libs => 1.0.5
 Requires:	ORBit => 0.4.0
@@ -21,8 +21,9 @@ BuildRequires:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	gnome
 
-%define		_prefix /usr/X11R6
-%define		_mandir /usr/X11R6/man
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
+%define		_sysconfdir	/etc/X11/GNOME
 
 %description
 The GNOME Personal Information Manager consists of applications to make
@@ -49,12 +50,10 @@ GNOME pim libraries, includes, etc.
 %build
 gettextize --copy --force
 automake
-autoconf
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-CXXFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-exceptions -fno-implicit-templates" \
-./configure %{_target_platform} \
-	--prefix=%{_prefix} \
-	--sysconfdir=/etc/X11/GNOME \
+LDFLAGS="-s"
+CXXFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-exceptions -fno-implicit-templates"
+export LDFLAGS CXXFLAGS
+%configure \
 	--without-included-gettext
 make
 
@@ -74,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc {AUTHORS,ChangeLog,NEWS,README}.gz
 
-%config /etc/X11/GNOME/CORBA/servers/*
+%config %{_sysconfdir}/CORBA/servers/*
 
 %attr(755,root,root) %{_bindir}/*
 
