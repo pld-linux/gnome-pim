@@ -103,7 +103,7 @@ disponíveis:
 
 %package conduits
 Summary:	GNOME Pilot conduits for GnomeCal and GnomeCard
-Summary(pl):	
+Summary(pl):	£±cza do GNOME Pilota dla GnomeCala i GnomeCarda	
 Group:		Office
 Requires:	%{name} = %{version}
 Requires:	gnome-pilot >= 0.1.62
