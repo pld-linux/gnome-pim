@@ -7,8 +7,11 @@ Group:		X11/Applications
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gnome-pim/%{name}-%{version}.tar.gz
 Patch:		gnome-pim-DESTDIR.patch
 Icon:		gnome-pim.gif
-Requires:	gnome-libs => 1.0.5, ORBit => 0.4.0
-Requires:	gtk+ = 1.2.1, glib = 1.2.1
+BuildPrereq:	gnome-libs-devel
+BuildPrereq:	ORBit-devel
+BuildPrereq:	gtk+-devel
+BuildPrereq:	glib-devel
+BuildPrereq:	XFree86-devel
 URL:		http://www.gnome.org/
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	gnome
@@ -24,7 +27,8 @@ Currently these apps are present:
 
 %package devel
 Summary:	GNOME pim libraries, includes, etc
-Group:		X11/Libraries
+Group:		X11/Development/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
@@ -54,15 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644, root, root, 755)
 %doc AUTHORS ChangeLog NEWS README
 
-%config /etc/X11/GNOME/CORBA/servers/*
-
-%attr(755, root, root) /usr/X11R6/bin/*
-
-/usr/X11R6/share/gnome/apps/Applications/*
-/usr/X11R6/share/gnome/help/*
-/usr/X11R6/share/mime-info/gnome-pim.keys
-/usr/X11R6/share/pixmaps/*
-
 %lang(de) /usr/X11R6/share/locale/de/LC_MESSAGES/gnome-pim.mo
 %lang(es) /usr/X11R6/share/locale/es/LC_MESSAGES/gnome-pim.mo
 %lang(fi) /usr/X11R6/share/locale/fi/LC_MESSAGES/gnome-pim.mo
@@ -76,6 +71,16 @@ rm -rf $RPM_BUILD_ROOT
 %lang(pt) /usr/X11R6/share/locale/pt/LC_MESSAGES/gnome-pim.mo
 %lang(ru) /usr/X11R6/share/locale/ru/LC_MESSAGES/gnome-pim.mo
 %lang(sv) /usr/X11R6/share/locale/sv/LC_MESSAGES/gnome-pim.mo
+
+%config /etc/X11/GNOME/CORBA/servers/*
+
+%attr(755, root, root) /usr/X11R6/bin/*
+
+/usr/X11R6/share/gnome/apps/Applications/*
+/usr/X11R6/share/gnome/help/*
+/usr/X11R6/share/mime-info/gnome-pim.keys
+/usr/X11R6/share/pixmaps/*
+
 
 %files devel
 %defattr(644, root, root, 755)
