@@ -13,11 +13,11 @@ Requires:	gnome-libs => 1.0.5
 Requires:	ORBit => 0.4.0
 Requires:	gtk+ >= 1.2.1
 Requires:	glib >= 1.2.1
-BuildPrereq:	gnome-libs-devel
-BuildPrereq:	gtk+-devel >= 1.2.0
-BuildPrereq:	imlib-devel
-BuildPrereq:	ORBit-devel
-BuildPrereq:	XFree86-devel
+BuildRequires:	gnome-libs-devel
+BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	imlib-devel
+BuildRequires:	ORBit-devel
+BuildRequires:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	gnome
 
