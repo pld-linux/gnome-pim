@@ -1,13 +1,14 @@
 Summary:	GNOME Personal Information Manager
 Name:		gnome-pim
 Version:	1.2.0
-Release:	7
+Release:	8
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-pim/%{name}-%{version}.tar.gz
+Patch0:		%{name}-fontset.patch
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
 Requires:	gnome-libs => 1.0.5
@@ -46,6 +47,7 @@ GNOME pim libraries, includes, etc.
 
 %prep
 %setup  -q
+%patch0 -p1
 
 %build
 gettextize --copy --force
