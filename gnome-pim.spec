@@ -1,11 +1,11 @@
 Summary:	GNOME Personal Information Manager
 Name:		gnome-pim
-Version:	1.1.3
+Version:	1.1.4
 Release:	1
 License:	GPL
 Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
-Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gnome-pim/%{name}-%{version}.tar.gz
+Source:		ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-pim/%{name}-%{version}.tar.gz
 Patch0:		gnome-pim-applnkdir.patch
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
@@ -20,6 +20,7 @@ BuildRequires:	ORBit-devel
 BuildRequires:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	gnome
+Obsoletes:	gnome-pim-devel
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
@@ -49,8 +50,7 @@ GNOME pim libraries, includes, etc.
 gettextize --copy --force
 automake
 LDFLAGS="-s"
-CXXFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-exceptions -fno-implicit-templates"
-export LDFLAGS CXXFLAGS
+export LDFLAGS
 %configure \
 	--without-included-gettext
 make
@@ -79,7 +79,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnome/help/*
 %{_datadir}/mime-info/gnome-pim.keys
 %{_datadir}/pixmaps/*
-
-%files devel
-%defattr(644,root,root,755)
-%{_datadir}/idl/*
