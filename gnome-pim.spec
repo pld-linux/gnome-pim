@@ -1,7 +1,7 @@
 Summary:	GNOME Personal Information Manager
 Name:		gnome-pim
 Version:	1.2.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
@@ -56,7 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 
 make install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	Productivitydir=%{_applnkdir}/Applications
+	Productivitydir=%{_applnkdir}/Office/PIMs
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
@@ -73,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 
-%{_applnkdir}/Applications/*
+%{_applnkdir}/Office/PIMs/*
 %{_datadir}/gnome/help/*
 %{_datadir}/mime-info/gnome-pim.keys
 %{_datadir}/pixmaps/*
