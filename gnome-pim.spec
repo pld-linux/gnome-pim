@@ -13,6 +13,7 @@ Requires:	ORBit => 0.4.0
 Requires:	gtk+ >= 1.2.1
 Requires:	glib >= 1.2.1
 BuildRequires:	gnome-libs-devel
+BuildRequires:	pilot-link-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	imlib-devel
 BuildRequires:	ORBit-devel
