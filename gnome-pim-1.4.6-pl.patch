@@ -1,3 +1,20 @@
+--- gnome-pim-1.4.6/gnomecard/dialog.c.orig	Thu Jun 13 22:02:28 2002
++++ gnome-pim-1.4.6/gnomecard/dialog.c	Thu Jun 13 22:01:42 2002
+@@ -1116,12 +1116,12 @@
+ 
+ static void gnomecard_send_read_error (char *fname)
+ {
+-	gnomecard_send_error (fname, "reading");
++	gnomecard_send_error (fname, _("reading"));
+ }
+ 
+ static void gnomecard_send_write_error (char *fname)
+ {
+-	gnomecard_send_error (fname, "writing");
++	gnomecard_send_error (fname, _("writing"));
+ }
+ 
+ static void gnomecard_append_call(GtkWidget *widget, gpointer data)
 --- gnome-pim-1.4.6/po/pl.po.orig	Thu Apr 25 21:53:28 2002
 +++ gnome-pim-1.4.6/po/pl.po	Sat Jun 15 00:10:37 2002
 @@ -15,20 +15,20 @@
@@ -1099,8 +1116,7 @@
  
  #. if (crd->sound.prop.used) {
  #. if (crd->sound.type != SOUND_PHONETIC)
-@@ -1728,20 +1755,25 @@
- msgid ""
+@@ -1729,19 +1756,24 @@
  "\n"
  "URL: "
  msgstr ""
@@ -1233,7 +1249,7 @@
  
  #: gnomecard/dialog.c:533
  msgid "lon."
-@@ -2004,11 +2030,11 @@
+@@ -2004,17 +2030,25 @@
  #: gnomecard/dialog.c:1079
  #, c-format
  msgid "GnomeCard: %s"
@@ -1247,7 +1263,21 @@
  
  #: gnomecard/dialog.c:1104
  #, c-format
-@@ -2029,7 +2055,7 @@
+ msgid "Error %s %s."
+ msgstr "B³±d %s %s."
+ 
++#: gnomecard/dialog.c:1119
++msgid "reading"
++msgstr "odczytu"
++
++#: gnomecard/dialog.c:1124
++msgid "writing"
++msgstr "zapisu do"
++
+ #: gnomecard/dialog.c:1144
+ msgid "Append GnomeCard File"
+ msgstr "Do³±cz plik GnomeCard"
+@@ -2029,7 +2063,7 @@
  
  #: gnomecard/dialog.c:1239
  msgid "GnomeCard"
@@ -1256,7 +1286,7 @@
  
  #: gnomecard/dialog.c:1242
  msgid "Electronic Business Card Manager"
-@@ -2040,13 +2066,13 @@
+@@ -2040,13 +2074,13 @@
  msgstr "Nie znaleziono pasuj±cego rekordu."
  
  #: gnomecard/dialog.c:1377
@@ -1272,7 +1302,7 @@
  
  #: gnomecard/dialog.c:1413
  msgid "Find Card"
-@@ -2117,31 +2143,27 @@
+@@ -2117,31 +2151,27 @@
  msgstr "X400"
  
  #: gnomecard/emaillist.c:393
@@ -1309,7 +1339,7 @@
  "Zakoñcz trwaj±ce modyfikacje i spróbuj ponownie."
  
  #: gnomecard/gnomecard.c:342
-@@ -2172,7 +2194,7 @@
+@@ -2172,7 +2202,7 @@
  
  #: gnomecard/gnomecard.c:483
  msgid "_Append..."
@@ -1318,7 +1348,7 @@
  
  #: gnomecard/gnomecard.c:484
  msgid "Add the contents of another card file"
-@@ -2204,36 +2226,35 @@
+@@ -2204,36 +2234,35 @@
  
  #: gnomecard/gnomecard.c:517
  msgid "By Card Name"
@@ -1363,7 +1393,7 @@
  
  #: gnomecard/gnomecard.c:533
  msgid "By Organization"
-@@ -2241,7 +2262,7 @@
+@@ -2241,7 +2270,7 @@
  
  #: gnomecard/gnomecard.c:533
  msgid "Sorts the card list by the name of the organization"
@@ -1372,7 +1402,7 @@
  
  #: gnomecard/gnomecard.c:548 gnomecard/gnomecard.c:658
  msgid "Create new card"
-@@ -2316,19 +2337,16 @@
+@@ -2316,19 +2345,16 @@
  msgstr "Usuwa kartê"
  
  #: gnomecard/gnomecard.c:839
@@ -1395,7 +1425,7 @@
  
  #: gnomecard/phonelist.c:30
  msgid "Preferred"
-@@ -2356,7 +2374,7 @@
+@@ -2356,7 +2382,7 @@
  
  #: gnomecard/phonelist.c:32
  msgid "Bulletin Board"
@@ -1404,7 +1434,7 @@
  
  #: gnomecard/phonelist.c:33
  msgid "Modem"
-@@ -2372,77 +2390,67 @@
+@@ -2372,77 +2398,67 @@
  
  #: gnomecard/phonelist.c:33
  msgid "Video"
