@@ -42,7 +42,6 @@ GNOME pim libraries, includes, etc.
 
 %prep
 %setup -q
-%patch -p1
 
 %build
 autoconf
