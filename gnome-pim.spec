@@ -108,7 +108,7 @@ disponíveis:
 
 %build
 rm -f missing
-gettextize --copy --force
+%{__gettextize}
 %{__libtoolize}
 aclocal -I macros
 %{__autoconf}
