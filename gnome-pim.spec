@@ -49,14 +49,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The GNOME Personal Information Manager consists of applications to
 make keeping up with your busy life easier. Currently these apps are
 present:
-- gnomecal - personal calendar and todo list,
-- gnomecard - contact list of friends and business associates.
+- gnomecal : personal calendar and todo list,
+- gnomecard: contact list of friends and business associates.
 
 %description -l es
 El administrador de informaciones personales del GNOME consiste de
 aplicaciones para hacer su vida muy mas fácil. Actualmente estas
 aplicaciones están presentes:
-- gnomecal: calendario personal,
+- gnomecal : calendario personal,
 - gnomecard: lista de contactos.
 
 %description -l ja
@@ -70,8 +70,8 @@ GNOME ¸Ä¿Í¾ðÊó´ÉÍý¥Þ¥Í¡¼¥¸¥ã¤Ë¤Ï¡¢Ë»¤·¤¤ËèÆü¤ò¤Á¤ç¤Ã¤È³Ú¤Ë¤·¤Æ¤¯¤ì
 %description -l pl
 Pakiet zawiera aplikacje robi±ce Twoje zapracowane ¿ycie prostrzym.
 Aktualnie dwie aplikacje s± obecne:
-- gnomecal - prywatny terminarz i lista zadañ
-- gnomecard - notatnik z kontaktami przyjació³ oraz partnerów
+- gnomecal : prywatny terminarz i lista zadañ
+- gnomecard: notatnik z kontaktami przyjació³ oraz partnerów
   biznesowych.
 
 %description -l pt_BR
