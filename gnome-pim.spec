@@ -27,7 +27,7 @@ Obsoletes:	gnome-pim-devel
 
 %description
 The GNOME Personal Information Manager consists of applications to
-make keeping up with your busy life easier. Currently these apps are
+%{__make} keeping up with your busy life easier. Currently these apps are
 present:
 - gnomecal - personal calendar and todo list
 - gnomecard - contact list of friends and business associates
@@ -54,7 +54,7 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install \
+%{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	Productivitydir=%{_applnkdir}/Office/PIMs
 
