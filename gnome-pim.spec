@@ -26,6 +26,10 @@ BuildRequires:	ORBit-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	flex
 BuildRequires:	docbook-style-dsssl
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
+BuildRequires:	gettext-devel
 Obsoletes:	gnome-pim-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -54,7 +58,7 @@ Aktualnie dwie aplikacje s± obecne:
 %patch2 -p1
 
 %build
-rm missing
+rm -f missing
 gettextize --copy --force
 libtoolize --copy --force
 aclocal -I macros
