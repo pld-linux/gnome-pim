@@ -10,6 +10,8 @@ Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-pim/%{name}-%{version}.tar.gz
 Patch0:		%{name}-fontset.patch
+Patch1:		%{name}-gettext.patch
+Patch2:		%{name}-macros.patch
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
 Requires:	gnome-libs => 1.0.5
@@ -48,10 +50,18 @@ Aktualnie dwie aplikacje s± obecne:
 %prep
 %setup  -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
+rm missing
 gettextize --copy --force
+libtoolize --copy --force
+aclocal -I macros
+autoconf
+automake -a -c
 %configure \
+	--enable-nls \
 	--without-included-gettext
 %{__make}
 
