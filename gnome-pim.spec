@@ -15,9 +15,8 @@ Release:	1.%{snap}
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
-#Source0:	http://me.in-berlin.de/~jroger/gnome-pim/%{name}-%{version}.tar.bz2
-Source0:	%{name}-%{version}-%{snap}.tar.bz2
-# Source0-md5: 	2e198158197873cb50c6c9f9f2aa240e
+Source0:	http://me.in-berlin.de/~jroger/gnome-pim/%{name}-%{version}.tar.gz
+# Source0-md5:	3aee416596b6b5a5f3f564700c73f562
 Patch0:		%{name}-desktop_location.patch
 Patch1:		%{name}-schemas.patch
 Icon:		gnome-pim.xpm
