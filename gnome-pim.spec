@@ -7,43 +7,18 @@ Summary(ru):	ðÅÒÓÏÎÁÌØÎÙÊ ÉÎÆÏÒÍÁÃÉÏÎÎÙÊ ÍÅÎÅÄÖÅÒ (PIM) ÄÌÑ GNOME
 Summary(uk):	ðÅÒÓÏÎÁÌØÎÉÊ ¦ÎÆÏÒÍÁÃ¦ÊÎÉÊ ÍÅÎÅÄÖÅÒ (PIM) ÄÌÑ GNOME
 Summary(zh_CN):	GNOME¸öÈËÐÅÏ¢¹ÜÀí¹¤¾ß
 Name:		gnome-pim
-Version:	1.4.6
-Release:	0.3
+Version:	1.91.1
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-pim/%{name}-%{version}.tar.gz
-# Patch0:	%{name}-fontset.patch
-Patch1:		%{name}-gettext.patch
-Patch2:		%{name}-macros.patch
-Patch4:		%{name}-am15.patch
-Patch5:		%{name}-missing_dirs.patch
-Patch6:		%{name}-1.4.6-pl.patch
-Patch7:		%{name}-shortcut.diff
+Source0:	http://me.in-berlin.de/%7Ejroger/gnome-pim/%{name}-%{version}.tar.gz
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
-Requires:	gnome-libs => 1.0.5
-Requires:	ORBit => 0.4.0
-Requires:	gtk+ >= 1.2.1
-Requires:	glib >= 1.2.1
-BuildRequires:	ORBit-devel
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	docbook-style-dsssl
-BuildRequires:	flex
-BuildRequires:	gettext-devel
-BuildRequires:	gnome-libs-devel
-BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	imlib-devel
-BuildRequires:	libstdc++-devel
-BuildRequires:	libtool
-BuildRequires:	pilot-link-devel
+BuildRequires:	libmimedir-devel >= 0.2.0
+BuildRequires:	libgnomeui-devel >= 2.1.5
 Obsoletes:	gnome-pim-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
-%define		_sysconfdir	/etc/X11/GNOME
 
 %description
 The GNOME Personal Information Manager consists of applications to
@@ -95,21 +70,8 @@ disponíveis:
 
 %prep
 %setup  -q
-# %patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
-%patch7 -p1
 
 %build
-rm -f missing
-%{__gettextize}
-%{__libtoolize}
-%{__aclocal} -I macros
-%{__autoconf}
-%{__automake}
 %configure \
 	--enable-nls \
 	--without-included-gettext
@@ -119,20 +81,24 @@ rm -f missing
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	Productivitydir=%{_applnkdir}/Office/PIMs
+	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name} --with-gnome --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%gconf_schema_install
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%config %{_sysconfdir}/CORBA/servers/*
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Office/PIMs/*
 %{_datadir}/mime-info/gnome-pim.keys
 %{_datadir}/idl/*
 %{_pixmapsdir}/*
+%{_sysconfdir}/gconf/schemas/*
+%{_libdir}/bonobo/servers/*
+%{_omf_dest_dir}/*
+%{_datadir}/gnome/apps/*/*
