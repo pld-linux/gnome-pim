@@ -6,7 +6,6 @@ Copyright:	GPL
 Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gnome-pim/%{name}-%{version}.tar.gz
-Patch:		gnome-pim-DESTDIR.patch
 Icon:		gnome-pim.gif
 URL:		http://www.gnome.org/
 Requires:	gnome-libs => 1.0.5
@@ -20,6 +19,8 @@ BuildPrereq:	ORBit-devel
 BuildPrereq:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	gnome
+
+%define _prefix /usr/X11R6
 
 %description
 The GNOME Personal Information Manager consists of applications to make
@@ -45,10 +46,11 @@ GNOME pim libraries, includes, etc.
 
 %build
 autoconf
+gettextize --copy --force
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 CXXFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-exceptions -fno-implicit-templates" \
 ./configure %{_target_platform} \
-	--prefix=/usr/X11R6 \
+	--prefix=%{_prefix} \
 	--sysconfdir=/etc/X11/GNOME \
 	--without-included-gettext
 make
@@ -71,17 +73,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %config /etc/X11/GNOME/CORBA/servers/*
 
-%attr(755,root,root) /usr/X11R6/bin/*
+%attr(755,root,root) %{_bindir}bin/*
 
-/usr/X11R6/share/gnome/apps/Applications/*
-/usr/X11R6/share/gnome/help/*
-/usr/X11R6/share/mime-info/gnome-pim.keys
-/usr/X11R6/share/pixmaps/*
+%{_datadir}/gnome/apps/Applications/*
+%{_datadir}/gnome/help/*
+%{_datadir}/mime-info/gnome-pim.keys
+%{_datadir}/pixmaps/*
 
 %files devel
 %defattr(644,root,root,755)
-/usr/X11R6/lib/lib*.a
-/usr/X11R6/share/idl/*
+%{_libdir}/lib*.a
+%{_datadir}/idl/*
 
 %changelog
 * Fri May 14 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
