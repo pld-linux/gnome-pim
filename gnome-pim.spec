@@ -1,11 +1,11 @@
 Summary:	GNOME Personal Information Manager
 Name:		gnome-pim
-Version:	1.1.5
+Version:	1.2.0
 Release:	1
 License:	GPL
 Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
-Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-pim/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-pim/%{name}-%{version}.tar.gz
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
 Requires:	gnome-libs => 1.0.5
