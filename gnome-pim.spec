@@ -80,7 +80,6 @@ disponíveis:
 %patch1 -p1
 
 %build
-NOCONFIGURE=1 ./autogen.sh
 %configure \
 	--enable-nls \
 	--without-included-gettext \
