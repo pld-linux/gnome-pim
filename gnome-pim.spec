@@ -46,8 +46,9 @@ Requires:	%{name} = %{version}
 GNOME pim libraries, includes, etc.
 
 %prep
-%setup -q
-%patch -p1
+%setup  -q
+%patch0 -p1
+%patch1 -p1
 
 %build
 gettextize --copy --force
