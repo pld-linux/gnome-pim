@@ -21,8 +21,8 @@ Patch0:		%{name}-desktop_location.patch
 Patch1:		%{name}-schemas.patch
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
-BuildRequires:	libmimedir-devel >= 0.2.1-1.20030114
 BuildRequires:	libgnomeui-devel >= 2.1.90
+BuildRequires:	libmimedir-devel >= 0.2.1-1.20030114
 Obsoletes:	gnome-pim-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -106,11 +106,11 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
 %{_libdir}/bonobo/servers/*
-%{_datadir}/applications/*
 %{_datadir}/idl/*
 %{_datadir}/mime-info/gnome-pim.keys
 %{_datadir}/gnomecard
 %{_datadir}/gnomecal
 %{_omf_dest_dir}/*
+%{_desktopdir}/*
 %{_pixmapsdir}/*
 %{_sysconfdir}/gconf/schemas/*
