@@ -6,6 +6,7 @@ Copyright:	GPL
 Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gnome-pim/%{name}-%{version}.tar.gz
+Patch:		gnome-pim-DESTDIR.patch
 Icon:		gnome-pim.gif
 URL:		http://www.gnome.org/
 Requires:	gnome-libs => 1.0.5
@@ -20,7 +21,8 @@ BuildPrereq:	XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	gnome
 
-%define _prefix /usr/X11R6
+%define		_prefix /usr/X11R6
+%define		_mandir /usr/X11R6/man
 
 %description
 The GNOME Personal Information Manager consists of applications to make
@@ -42,10 +44,12 @@ GNOME pim libraries, includes, etc.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
-autoconf
 gettextize --copy --force
+automake
+autoconf
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 CXXFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-exceptions -fno-implicit-templates" \
 ./configure %{_target_platform} \
@@ -68,11 +72,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc {AUTHORS,ChangeLog,NEWS,README}.gz
 
 %config /etc/X11/GNOME/CORBA/servers/*
 
-%attr(755,root,root) %{_bindir}bin/*
+%attr(755,root,root) %{_bindir}/*
 
 %{_datadir}/gnome/apps/Applications/*
 %{_datadir}/gnome/help/*
