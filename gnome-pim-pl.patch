@@ -1273,7 +1273,7 @@
 -#, fuzzy
  msgid "Phone List:"
 -msgstr "Telefony:\n"
-+msgstr "Lista telefonów:\n"
++msgstr "Lista telefonów:"
  
  #: gnomecard/tree.c:106
 -#, fuzzy
