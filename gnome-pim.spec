@@ -1,3 +1,6 @@
+#
+%bcond_without	pilot_support
+
 Summary:	GNOME Personal Information Manager
 Summary(es):	El administrador de informaciones personales del GNOME
 Summary(ja):	The GNOME ¸Ä¿Í¾ðÊó´ÉÍý¥Þ¥Í¡¼¥¸¥ã
@@ -21,6 +24,7 @@ Patch3:		%{name}-gnomecal.patch
 Patch4:		%{name}-am15.patch
 Patch5:		%{name}-missing_gnomecard_help.patch
 Patch6:		%{name}-pl.patch
+Patch7:		%{name}-lt.patch
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
 Requires:	gnome-libs => 1.0.5
@@ -34,10 +38,12 @@ BuildRequires:	docbook-style-dsssl
 BuildRequires:	flex
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
+%{?with_pilot_support:BuildRequires:	gnome-pilot-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	imlib-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
+BuildRequires:	libxml-devel
 BuildRequires:	pilot-link-devel
 Obsoletes:	gnome-pim-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -97,6 +103,21 @@ disponíveis:
  - gnomecal : ÐÅÒÓÏÎÁÌØÎÉÊ ËÁÌÅÎÄÁÒ ÔÁ ÓÐÉÓÏË ÓÐÒÁ× (todo)
  - gnomecard: ÓÐÉÓÏË ËÏÎÔÁËÔ¦×
 
+%package conduits
+Summary:	Gnome Pilot conduits for GnomeCal and GnomeCard
+Group:		Office
+Requires:	%{name} = %{version}
+Requires:	gnome-pilot >= 0.1.62
+
+%description conduits
+The gnome-pim-conduits package includes the conduits needed to connect
+your PalmPilot with gnome-pim applications.
+
+Currently these conduits are present:
+ - gnomecal : synchronizes your GnomeCal calendar with your Palm's
+              calendar
+ - gnomecard: synchronizes your contact list
+
 %prep
 %setup  -q
 #%patch0 -p1
@@ -106,6 +127,7 @@ disponíveis:
 #%patch4 -p1
 #%patch5 -p1
 %patch6 -p1
+%patch7 -p1
 
 %build
 rm -f missing
@@ -124,7 +146,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	Productivitydir=%{_applnkdir}/Office/PIMs
+	Productivitydir=%{_applnkdir}/Office/PIMs \
+	productivitydir=%{_applnkdir}/Office/PIMs
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -138,4 +161,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Office/PIMs/*
 %{_datadir}/mime-info/gnome-pim.keys
-%{_pixmapsdir}/*
+%{_pixmapsdir}/gnome-gnomecard.png
+%{_datadir}/idl/*
+
+%if %{with pilot_support}
+%files conduits
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/gnome-pilot/conduits/*.so*
+%{_pixmapsdir}/gnome-calendar-conduit.png
+%{_datadir}/gnome-pilot/conduits/*
+%endif
