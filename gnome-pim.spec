@@ -1,7 +1,7 @@
 Summary:	GNOME Personal Information Manager
 Name:		gnome-pim
-Version:	1.0.7
-Release:	2
+Version:	1.0.8
+Release:	1
 Copyright:	GPL
 Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
@@ -60,10 +60,12 @@ make DESTDIR=$RPM_BUILD_ROOT install
 
 gzip -9fn AUTHORS ChangeLog NEWS README
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f gnome-pim.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 
@@ -75,20 +77,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/X11R6/share/gnome/help/*
 /usr/X11R6/share/mime-info/gnome-pim.keys
 /usr/X11R6/share/pixmaps/*
-
-%lang(de) /usr/X11R6/share/locale/de/LC_MESSAGES/gnome-pim.mo
-%lang(es) /usr/X11R6/share/locale/es/LC_MESSAGES/gnome-pim.mo
-%lang(fi) /usr/X11R6/share/locale/fi/LC_MESSAGES/gnome-pim.mo
-%lang(fr) /usr/X11R6/share/locale/fr/LC_MESSAGES/gnome-pim.mo
-%lang(ga) /usr/X11R6/share/locale/ga/LC_MESSAGES/gnome-pim.mo
-%lang(hu) /usr/X11R6/share/locale/hu/LC_MESSAGES/gnome-pim.mo
-%lang(it) /usr/X11R6/share/locale/it/LC_MESSAGES/gnome-pim.mo
-%lang(ja) /usr/X11R6/share/locale/ja/LC_MESSAGES/gnome-pim.mo
-%lang(ko) /usr/X11R6/share/locale/ko/LC_MESSAGES/gnome-pim.mo
-%lang(no) /usr/X11R6/share/locale/no/LC_MESSAGES/gnome-pim.mo
-%lang(pt) /usr/X11R6/share/locale/pt/LC_MESSAGES/gnome-pim.mo
-%lang(ru) /usr/X11R6/share/locale/ru/LC_MESSAGES/gnome-pim.mo
-%lang(sv) /usr/X11R6/share/locale/sv/LC_MESSAGES/gnome-pim.mo
 
 %files devel
 %defattr(644,root,root,755)
