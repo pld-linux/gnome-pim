@@ -1,0 +1,113 @@
+--- gnome-pim-1.4.9/gncal/Makefile.am	Fri Dec 20 16:39:04 2002
++++ gnome-pim-1.4.9.n/gncal/Makefile.am	Mon Dec 15 18:56:50 2003
+@@ -53,18 +53,19 @@
+ 	$(GNOME_LIBDIR) \
+ 	$(GNOMEGNORBA_LIBS) \
+ 	$(INTLLIBS) \
++	GnomeCal-common.lo \
++	alarm.lo \
++	calendar.lo \
++	calobj.lo \
++	timeutil.lo \
+ 	$(top_builddir)/libversit/libversit.a
+ 
+ gnomecal_SOURCES = \
+-	GnomeCal-common.c	\
+ 	GnomeCal-skels.c	\
+ 	GnomeCal.h		\
+-	alarm.c			\
+ 	alarm.h			\
+-	calendar.c		\
+ 	calendar.h		\
+ 	calendar-conduit.h	\
+-	calobj.c		\
+ 	calobj.h		\
+ 	eventedit.c		\
+ 	eventedit.h		\
+@@ -103,7 +104,6 @@
+ 	prop.c			\
+ 	quick-view.c		\
+ 	quick-view.h		\
+-	timeutil.c		\
+ 	timeutil.h		\
+ 	todo-conduit.h		\
+ 	view-utils.h		\
+@@ -124,13 +130,8 @@
+ endif 
+ 
+ libcalendar_conduit_la_SOURCES = \
+-	GnomeCal-common.c	\
+ 	GnomeCal-stubs.c	\
+-	calendar-conduit.c	\
+-	calobj.c 		\
+-	alarm.c			\
+-	calendar.c 		\
+-	timeutil.c
++	calendar-conduit.c
+ 
+ calendar-conduit.c: idl.stamp
+ 
+--- gnome-pim-1.4.9/gnomecard/Makefile.am	Tue Mar 12 01:41:58 2002
++++ gnome-pim-1.4.9.n/gnomecard/Makefile.am	Mon Dec 15 18:58:37 2003
+@@ -14,7 +14,6 @@
+ 
+ gnomecard_SOURCES =	\
+         $(CORBA_SRCLIST) \
+-	card.c		\
+ 	card.h		\
+ 	columnhdrs.c    \
+ 	columnhdrs.h    \
+@@ -39,7 +38,6 @@
+ 	list.h		\
+ 	misc.c          \
+ 	misc.h          \
+-	my.c            \
+ 	my.h            \
+ 	phonelist.c     \
+ 	phonelist.h     \
+@@ -72,6 +73,8 @@
+ 
+ gnomecard_LDADD = $(LINK_FLAGS)\
+ 	$(GNOME_LIBDIR) \
++	card.lo \
++	my.lo \
+ 	$(GNOMEGNORBA_LIBS)
+ 
+ if HAVE_GNOME_PILOT
+@@ -84,11 +87,12 @@
+ 	-module -avoid-version
+ 
+ libaddress_conduit_la_SOURCES = \
+-	card.c \
+-	my.c \
+ 	address-conduit.h \
+ 	address-conduit.c
+ 
++#	card.c \
++#	my.c
++
+ libaddress_conduit_la_LIBADD = \
+ 	$(top_builddir)/libversit/libversit_lt.la \
+ 	$(PISOCK_LIBS) \
+--- gnome-pim-1.4.9/libversit/Makefile.am	Thu Jun 27 20:25:32 2002
++++ gnome-pim-1.4.9.n/libversit/Makefile.am	Mon Dec 15 19:00:39 2003
+@@ -3,18 +3,15 @@
+ # $Id$
+ 
+ VERSIT_SRC =		\
+-	vcc.y		\
+ 	vcc.h		\
+-	vobject.c	\
+ 	vobject.h	\
+ 	port.h		\
+-	vcaltmp.c	\
+ 	vcaltmp.h
+ 
+ noinst_LIBRARIES = libversit.a
+ noinst_LTLIBRARIES = libversit_lt.la
+ 
+-libversit_a_SOURCES = $(VERSIT_SRC)
++libversit_a_SOURCES = $(VERSIT_SRC) vcc.y vobject.c vcaltmp.c
+ libversit_lt_la_SOURCES = $(VERSIT_SRC)
+ 
+ EXTRA_DIST = README.TXT vcaltest.c vctest.c
