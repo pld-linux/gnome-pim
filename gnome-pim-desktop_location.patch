@@ -1,0 +1,24 @@
+diff -urN gnome-pim-1.91.1.orig/gncal/Makefile.am gnome-pim-1.91.1/gncal/Makefile.am
+--- gnome-pim-1.91.1.orig/gncal/Makefile.am	Tue Jan  7 20:36:13 2003
++++ gnome-pim-1.91.1/gncal/Makefile.am	Tue Jan  7 20:49:00 2003
+@@ -133,7 +133,7 @@
+ 
+ @INTLTOOL_SERVER_RULE@
+ 
+-desktopdir = $(datadir)/gnome/apps/Applications
++desktopdir = $(datadir)/applications
+ desktop_in_files = gnomecal.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+ 
+diff -urN gnome-pim-1.91.1.orig/gnomecard/Makefile.am gnome-pim-1.91.1/gnomecard/Makefile.am
+--- gnome-pim-1.91.1.orig/gnomecard/Makefile.am	Tue Jan  7 20:36:14 2003
++++ gnome-pim-1.91.1/gnomecard/Makefile.am	Tue Jan  7 20:50:12 2003
+@@ -117,7 +117,7 @@
+ icondir = $(datadir)/pixmaps
+ icon_DATA = gnome-gnomecard.png
+ 
+-desktopdir = $(datadir)/gnome/apps/Applications
++desktopdir = $(datadir)/applications
+ desktop_in_files = gnomecard.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+ 
