@@ -1,0 +1,8 @@
+--- gnome-pim-1.4.0/gncal/doc/C/gnomecal.sgml.fbl	Mon Jun 18 10:33:13 2001
++++ gnome-pim-1.4.0/gncal/doc/C/gnomecal.sgml	Mon Jun 18 10:33:20 2001
+@@ -1,4 +1,4 @@
+-<!DOCTYPE book PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
++<!DOCTYPE Article PUBLIC "-//OASIS//DTD DocBook V3.1//EN"[
+ ]>
+ 
+ <book id="gnomecal">
