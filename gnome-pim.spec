@@ -1,13 +1,12 @@
 Summary:	GNOME Personal Information Manager
 Name:		gnome-pim
-Version:	1.0.55
+Version:	1.1.3
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gnome-pim/%{name}-%{version}.tar.gz
-Patch0:		gnome-pim-DESTDIR.patch
-Patch1:		gnome-pim-applnkdir.patch
+Patch0:		gnome-pim-applnkdir.patch
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
 Requires:	gnome-libs => 1.0.5
@@ -29,12 +28,9 @@ Obsoletes:	gnome
 
 %description
 The GNOME Personal Information Manager consists of applications to make
-keeping up with your busy life easier.
-
-Currently these apps are present:
-
- - gnomecal :  personal calendar and todo list
- - gnomecard:  contact list of friends and business associates
+keeping up with your busy life easier. Currently these apps are present:
+- gnomecal -  personal calendar and todo list
+- gnomecard -  contact list of friends and business associates
 
 %package devel
 Summary:	GNOME pim libraries, includes, etc
@@ -48,7 +44,6 @@ GNOME pim libraries, includes, etc.
 %prep
 %setup  -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 gettextize --copy --force
@@ -65,7 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 
 make DESTDIR=$RPM_BUILD_ROOT install
 
-gzip -9fn AUTHORS ChangeLog NEWS README
+gzip -9nf AUTHORS ChangeLog NEWS README
 
 %find_lang %{name}
 
@@ -87,5 +82,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
 %{_datadir}/idl/*
