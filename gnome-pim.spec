@@ -1,3 +1,6 @@
+# TODO:
+#  - fix gnomecal conduit - libcalendar_conduit (linking problem ?)
+#  - fix conduits i18n (proper gettext domain binding)
 #
 %bcond_without	pilot_support
 
@@ -11,20 +14,18 @@ Summary(uk):	ðÅÒÓÏÎÁÌØÎÉÊ ¦ÎÆÏÒÍÁÃ¦ÊÎÉÊ ÍÅÎÅÄÖÅÒ (PIM) ÄÌÑ GNOME
 Summary(zh_CN):	GNOME¸öÈËÐÅÏ¢¹ÜÀí¹¤¾ß
 Name:		gnome-pim
 Version:	1.4.9
-Release:	0.1
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.jroger.in-berlin.de/gnome-pim//%{name}-%{version}.tar.gz
 # Source0-md5:	849babfa25e08eb7616d20e826f7fb6d
-Patch0:		%{name}-fontset.patch
+Patch0:		%{name}-pl.patch
 Patch1:		%{name}-gettext.patch
 Patch2:		%{name}-macros.patch
-Patch3:		%{name}-gnomecal.patch
-Patch4:		%{name}-am15.patch
-Patch5:		%{name}-missing_gnomecard_help.patch
-Patch6:		%{name}-pl.patch
-Patch7:		%{name}-lt.patch
+Patch3:		%{name}-lt.patch
+Patch4:		%{name}-am.patch
+Patch5:		%{name}-desktop.patch
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
 Requires:	gnome-libs => 1.0.5
@@ -70,14 +71,13 @@ aplicaciones están presentes:
 GNOME ¸Ä¿Í¾ðÊó´ÉÍý¥Þ¥Í¡¼¥¸¥ã¤Ë¤Ï¡¢Ë»¤·¤¤ËèÆü¤ò¤Á¤ç¤Ã¤È³Ú¤Ë¤·¤Æ¤¯¤ì
 ¤ë¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¤¬´Þ¤Þ¤ì¤Æ¤¤¤Þ¤¹¡£
 ¸½ºß¡¢°Ê²¼¤Î¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¤¬»È¤¨¤Þ¤¹:
-
- - gnomecal : ¥Ñ¡¼¥½¥Ê¥ë¤Ê¥«¥ì¥ó¥À¡¼¤È To Do ¥ê¥¹¥È
- - gnomecard: Í§¿Í¤ä¥Ó¥¸¥Í¥¹´Ø·¸¼Ô¤ÎÏ¢ÍíÀè¥ê¥¹¥È
+- gnomecal : ¥Ñ¡¼¥½¥Ê¥ë¤Ê¥«¥ì¥ó¥À¡¼¤È To Do ¥ê¥¹¥È
+- gnomecard: Í§¿Í¤ä¥Ó¥¸¥Í¥¹´Ø·¸¼Ô¤ÎÏ¢ÍíÀè¥ê¥¹¥È
 
 %description -l pl
 Pakiet zawiera aplikacje robi±ce Twoje zapracowane ¿ycie prostrzym.
 Aktualnie dwie aplikacje s± obecne:
-- gnomecal : prywatny terminarz i lista zadañ
+- gnomecal : prywatny terminarz i lista zadañ,
 - gnomecard: notatnik z kontaktami przyjació³ oraz partnerów
   biznesowych.
 
@@ -92,42 +92,45 @@ disponíveis:
 ðÅÒÓÏÎÁÌØÎÙÊ ÉÎÆÏÒÍÁÃÉÏÎÎÙÊ ÍÅÎÅÄÖÅÒ ÓÏÓÔÏÉÔ ÉÚ ÐÒÉÌÏÖÅÎÉÊ,
 ÏÂÌÅÇÞÁÀÝÉÈ ÖÉÚÎØ ÚÁÎÑÔÙÈ ÌÀÄÅÊ. ÷ ÎÁÓÔÏÑÝÅÅ ×ÒÅÍÑ ÜÔÏ ÓÌÅÄÕÀÝÉÅ
 ÐÒÏÇÒÁÍÍÙ:
-
- - gnomecal : ÐÅÒÓÏÎÁÌØÎÙÊ ËÁÌÅÎÄÁÒØ É ÓÐÉÓÏË ÄÅÌ (todo)
- - gnomecard: ÓÐÉÓÏË ËÏÎÔÁËÔÏ×
+- gnomecal : ÐÅÒÓÏÎÁÌØÎÙÊ ËÁÌÅÎÄÁÒØ É ÓÐÉÓÏË ÄÅÌ (todo),
+- gnomecard: ÓÐÉÓÏË ËÏÎÔÁËÔÏ×.
 
 %description -l uk
 ðÅÒÓÏÎÁÌØÎÉÊ ¦ÎÆÏÒÍÁÃ¦ÊÎÉÊ ÍÅÎÅÄÖÅÒ ÓËÌÁÄÁ¤ÔØÓÑ Ú ÐÒÉËÌÁÄÎÉÈ ÐÒÏÇÒÁÍ,
 ÝÏ ÐÏÌÅÇÛÕÀÔØ ÖÉÔÔÑ ÚÁÊÎÑÔÉÈ ÌÀÄÅÊ. îÁÒÁÚ¦ ÃÅ ÎÁÓÔÕÐÎ¦ ÐÒÏÇÒÁÍÉ:
-
- - gnomecal : ÐÅÒÓÏÎÁÌØÎÉÊ ËÁÌÅÎÄÁÒ ÔÁ ÓÐÉÓÏË ÓÐÒÁ× (todo)
- - gnomecard: ÓÐÉÓÏË ËÏÎÔÁËÔ¦×
+- gnomecal : ÐÅÒÓÏÎÁÌØÎÉÊ ËÁÌÅÎÄÁÒ ÔÁ ÓÐÉÓÏË ÓÐÒÁ× (todo),
+- gnomecard: ÓÐÉÓÏË ËÏÎÔÁËÔ¦×.
 
 %package conduits
-Summary:	Gnome Pilot conduits for GnomeCal and GnomeCard
+Summary:	GNOME Pilot conduits for GnomeCal and GnomeCard
+Summary(pl):	
 Group:		Office
 Requires:	%{name} = %{version}
 Requires:	gnome-pilot >= 0.1.62
 
 %description conduits
 The gnome-pim-conduits package includes the conduits needed to connect
-your PalmPilot with gnome-pim applications.
+your PalmPilot with gnome-pim applications. Currently these conduits
+are present:
+- gnomecal : synchronizes your GnomeCal calendar with your Palm's
+             calendar,
+- gnomecard: synchronizes your contact list.
 
-Currently these conduits are present:
- - gnomecal : synchronizes your GnomeCal calendar with your Palm's
-              calendar
- - gnomecard: synchronizes your contact list
+%description conduits -l pl
+Pakiet gnome-pim-conduits zawiera ³±cza niezbêdne do komunikacji
+PalmPilota z aplikacjami gnome-pim. Aktualnie dwa ³±cza s± obecne:
+- gnomecal : do synchronizacji prywatny terminarz GnomeCala z
+             kalendarzem Palm-Pilota,
+- gnomecard: do synchronizacji listy kontaktów.
 
 %prep
 %setup  -q
-#%patch0 -p1
+%patch0 -p1
 #%patch1 -p1
 %patch2 -p1
-#%patch3 -p1
-#%patch4 -p1
-#%patch5 -p1
-%patch6 -p1
-%patch7 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
 
 %build
 rm -f missing
