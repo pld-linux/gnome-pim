@@ -5,7 +5,7 @@ Release:	1
 License:	GPL
 Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
-Source:		ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-pim/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-pim/%{name}-%{version}.tar.gz
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
 Requires:	gnome-libs => 1.0.5
@@ -26,10 +26,11 @@ Obsoletes:	gnome-pim-devel
 %define		_sysconfdir	/etc/X11/GNOME
 
 %description
-The GNOME Personal Information Manager consists of applications to make
-keeping up with your busy life easier. Currently these apps are present:
-- gnomecal -  personal calendar and todo list
-- gnomecard -  contact list of friends and business associates
+The GNOME Personal Information Manager consists of applications to
+make keeping up with your busy life easier. Currently these apps are
+present:
+- gnomecal - personal calendar and todo list
+- gnomecard - contact list of friends and business associates
 
 %package devel
 Summary:	GNOME pim libraries, includes, etc
