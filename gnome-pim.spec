@@ -1,7 +1,7 @@
 Summary:	GNOME Personal Information Manager
 Name:		gnome-pim
-Version:	1.0.10
-Release:	3
+Version:	1.0.42
+Release:	1
 Copyright:	GPL
 Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
