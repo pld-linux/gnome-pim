@@ -1,5 +1,5 @@
 
-%define		snap		20030112
+%define		snap		20030114
 
 Summary:	GNOME Personal Information Manager
 Summary(es):	El administrador de informaciones personales del GNOME
@@ -21,8 +21,8 @@ Patch0:		%{name}-desktop_location.patch
 Patch1:		%{name}-schemas.patch
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
-BuildRequires:	libmimedir-devel >= 0.2.1-1.20030112
-BuildRequires:	libgnomeui-devel >= 2.1.5
+BuildRequires:	libmimedir-devel >= 0.2.1-1.20030114
+BuildRequires:	libgnomeui-devel >= 2.1.90
 Obsoletes:	gnome-pim-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
