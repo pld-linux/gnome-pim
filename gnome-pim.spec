@@ -1,3 +1,6 @@
+
+%define		snap		20030112
+
 Summary:	GNOME Personal Information Manager
 Summary(es):	El administrador de informaciones personales del GNOME
 Summary(ja):	The GNOME ¸Ä¿Í¾ðÊó´ÉÍý¥Þ¥Í¡¼¥¸¥ã
@@ -8,14 +11,17 @@ Summary(uk):	ðÅÒÓÏÎÁÌØÎÉÊ ¦ÎÆÏÒÍÁÃ¦ÊÎÉÊ ÍÅÎÅÄÖÅÒ (PIM) ÄÌÑ GNOME
 Summary(zh_CN):	GNOME¸öÈËÐÅÏ¢¹ÜÀí¹¤¾ß
 Name:		gnome-pim
 Version:	1.91.1
-Release:	1
+Release:	1.%{snap}
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://me.in-berlin.de/%7Ejroger/gnome-pim/%{name}-%{version}.tar.bz2
+#Source0:	http://me.in-berlin.de/%7Ejroger/gnome-pim/%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}-%{snap}.tar.bz2
+Patch0:		%{name}-desktop_location.patch
+Patch1:		%{name}-schemas.patch
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
-BuildRequires:	libmimedir-devel >= 0.2.0
+BuildRequires:	libmimedir-devel >= 0.2.1-1.20030112
 BuildRequires:	libgnomeui-devel >= 2.1.5
 Obsoletes:	gnome-pim-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -70,12 +76,15 @@ disponíveis:
 
 %prep
 %setup  -q
+%patch0 -p1
+%patch1 -p1
 
 %build
+NOCONFIGURE=1 ./autogen.sh
 %configure \
 	--enable-nls \
 	--without-included-gettext \
-	--disable-schemas-install
+	--disable-install-schemas
 %{__make}
 
 %install
@@ -97,10 +106,11 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
 %{_libdir}/bonobo/servers/*
-%{_datadir}/appslications/*
+%{_datadir}/applications/*
 %{_datadir}/idl/*
 %{_datadir}/mime-info/gnome-pim.keys
 %{_datadir}/gnomecard
+%{_datadir}/gnomecal
 %{_omf_dest_dir}/*
 %{_pixmapsdir}/*
 %{_sysconfdir}/gconf/schemas/*
