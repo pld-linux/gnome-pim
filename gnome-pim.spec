@@ -15,7 +15,7 @@ Release:	1.%{snap}
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
-#Source0:	http://me.in-berlin.de/%7Ejroger/gnome-pim/%{name}-%{version}.tar.bz2
+#Source0:	http://me.in-berlin.de/~jroger/gnome-pim/%{name}-%{version}.tar.bz2
 Source0:	%{name}-%{version}-%{snap}.tar.bz2
 Patch0:		%{name}-desktop_location.patch
 Patch1:		%{name}-schemas.patch
