@@ -1,0 +1,8 @@
+- merge translation from Conectiva,
+- merge gnomecal patch ftom Conectiva,
+- add am15 patch and added also full regenerate am/ac/lt files,
+- add missing_gnomecard_help patch with missing gnomecard helpt files
+  (resources stolen fron gnome cvs tree),
+- use --with-gnome --all-name in %%find_lang macro parameters (remove help
+  files from %%files list),
+- removed idl files from %files.
