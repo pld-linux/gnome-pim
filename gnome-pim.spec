@@ -1,12 +1,13 @@
 Summary:	GNOME Personal Information Manager
 Name:		gnome-pim
 Version:	1.0.10
-Release:	2
+Release:	3
 Copyright:	GPL
 Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gnome-pim/%{name}-%{version}.tar.gz
-Patch:		gnome-pim-DESTDIR.patch
+Patch0:		gnome-pim-DESTDIR.patch
+Patch1:		gnome-pim-applnkdir.patch
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
 Requires:	gnome-libs => 1.0.5
@@ -24,6 +25,7 @@ Obsoletes:	gnome
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
 %define		_sysconfdir	/etc/X11/GNOME
+%define		_applnkdir	%{_datadir}/applnk
 
 %description
 The GNOME Personal Information Manager consists of applications to make
@@ -77,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 
-%{_datadir}/gnome/apps/Applications/*
+%{_applnkdir}/Applications/*
 %{_datadir}/gnome/help/*
 %{_datadir}/mime-info/gnome-pim.keys
 %{_datadir}/pixmaps/*
