@@ -12,7 +12,7 @@ Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://me.in-berlin.de/%7Ejroger/gnome-pim/%{name}-%{version}.tar.gz
+Source0:	http://me.in-berlin.de/%7Ejroger/gnome-pim/%{name}-%{version}.tar.bz2
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
 BuildRequires:	libmimedir-devel >= 0.2.0
@@ -74,7 +74,8 @@ disponíveis:
 %build
 %configure \
 	--enable-nls \
-	--without-included-gettext
+	--without-included-gettext \
+	--disable-schemas-install
 %{__make}
 
 %install
@@ -96,7 +97,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
 %{_libdir}/bonobo/servers/*
-%{_datadir}/gnome/apps/*/*
+%{_datadir}/appslications/*
 %{_datadir}/idl/*
 %{_datadir}/mime-info/gnome-pim.keys
 %{_datadir}/gnomecard
