@@ -80,4 +80,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_applnkdir}/Office/PIMs/*
 %{_datadir}/gnome/help/*
 %{_datadir}/mime-info/gnome-pim.keys
-%{_datadir}/pixmaps/*
+%{_pixmapsdir}/*
