@@ -7,19 +7,18 @@ Summary(ru):	ðÅÒÓÏÎÁÌØÎÙÊ ÉÎÆÏÒÍÁÃÉÏÎÎÙÊ ÍÅÎÅÄÖÅÒ (PIM) ÄÌÑ GNOME
 Summary(uk):	ðÅÒÓÏÎÁÌØÎÉÊ ¦ÎÆÏÒÍÁÃ¦ÊÎÉÊ ÍÅÎÅÄÖÅÒ (PIM) ÄÌÑ GNOME
 Summary(zh_CN):	GNOME¸öÈËÐÅÏ¢¹ÜÀí¹¤¾ß
 Name:		gnome-pim
-Version:	1.4.0
-Release:	2
+Version:	1.4.6
+Release:	0.1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-pim/%{name}-%{version}.tar.gz
-Patch0:		%{name}-fontset.patch
+# Patch0:	%{name}-fontset.patch
 Patch1:		%{name}-gettext.patch
 Patch2:		%{name}-macros.patch
-Patch3:		%{name}-gnomecal.patch
 Patch4:		%{name}-am15.patch
-Patch5:		%{name}-missing_gnomecard_help.patch
-Patch6:		%{name}-pl.patch
+Patch5:		%{name}-missing_dirs.patch
+Patch6:		%{name}-1.4.6-pl.patch
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
 Requires:	gnome-libs => 1.0.5
@@ -98,10 +97,9 @@ disponíveis:
 
 %prep
 %setup  -q
-%patch0 -p1
+# %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
@@ -137,4 +135,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Office/PIMs/*
 %{_datadir}/mime-info/gnome-pim.keys
+%{_datadir}/idl/*
 %{_pixmapsdir}/*
