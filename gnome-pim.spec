@@ -1,7 +1,11 @@
 Summary:	GNOME Personal Information Manager
 Summary(es):	El administrador de informaciones personales del GNOME
+Summary(ja):	The GNOME ╦д©м╬ПйС╢имЩ╔ч╔м║╪╔╦╔Ц
 Summary(pl):	Osobisty terminarz i mened©er harmonogramСw
 Summary(pt_BR):	O gerenciador de informaГУes pessoais do GNOME
+Summary(ru):	Персональный информационный менеджер (PIM) для GNOME
+Summary(uk):	Персональний ╕нформац╕йний менеджер (PIM) для GNOME
+Summary(zh_CN):	GNOME╦Жхкпео╒╧эюМ╧╓╬ъ
 Name:		gnome-pim
 Version:	1.4.0
 Release:	2
@@ -55,6 +59,14 @@ aplicaciones estАn presentes:
 - gnomecal: calendario personal,
 - gnomecard: lista de contactos.
 
+%description -l ja
+GNOME ╦д©м╬ПйС╢имЩ╔ч╔м║╪╔╦╔Ц╓к╓о║╒к╩╓╥╓╓кХфЭ╓Р╓а╓Г╓ц╓хЁз╓к╓╥╓ф╓╞╓Л
+╓К╔╒╔в╔Й╔╠║╪╔╥╔Г╔С╓╛╢ч╓ч╓Л╓ф╓╓╓ч╓╧║ё
+╦╫╨ъ║╒╟й╡╪╓н╔╒╔в╔Й╔╠║╪╔╥╔Г╔С╓╛╩х╓╗╓ч╓╧:
+
+ - gnomecal : ╔я║╪╔╫╔й╔К╓й╔╚╔Л╔С╔ю║╪╓х To Do ╔Й╔╧╔х
+ - gnomecard: м╖©м╓Д╔с╔╦╔м╔╧╢ь╥╦╪т╓но╒мМюХ╔Й╔╧╔х
+
 %description -l pl
 Pakiet zawiera aplikacje robi╠ce Twoje zapracowane ©ycie prostrzym.
 Aktualnie dwie aplikacje s╠ obecne:
@@ -69,6 +81,21 @@ disponМveis:
 - gnomecal : calendАrio pessoal e lista de coisas a fazer,
 - gnomecard: lista de contatos: amigos e parceiros comerciais.
 
+%description -l ru
+Персональный информационный менеджер состоит из приложений,
+облегчающих жизнь занятых людей. В настоящее время это следующие
+программы:
+
+ - gnomecal : персональный календарь и список дел (todo)
+ - gnomecard: список контактов
+
+%description -l uk
+Персональний ╕нформац╕йний менеджер склада╓ться з прикладних програм,
+що полегшують життя зайнятих людей. Нараз╕ це наступн╕ програми:
+
+ - gnomecal : персональний календар та список справ (todo)
+ - gnomecard: список контакт╕в
+
 %prep
 %setup  -q
 %patch0 -p1
@@ -82,7 +109,7 @@ disponМveis:
 %build
 rm -f missing
 gettextize --copy --force
-libtoolize --copy --force
+%{__libtoolize}
 aclocal -I macros
 %{__autoconf}
 %{__automake}
@@ -98,8 +125,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	Productivitydir=%{_applnkdir}/Office/PIMs
 
-gzip -9nf AUTHORS ChangeLog NEWS README
-
 %find_lang %{name} --with-gnome --all-name
 
 %clean
@@ -107,7 +132,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog NEWS README
 %config %{_sysconfdir}/CORBA/servers/*
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Office/PIMs/*
