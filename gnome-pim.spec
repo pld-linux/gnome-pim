@@ -27,7 +27,7 @@ Obsoletes:	gnome-pim-devel
 
 %description
 The GNOME Personal Information Manager consists of applications to
-%{__make} keeping up with your busy life easier. Currently these apps are
+make keeping up with your busy life easier. Currently these apps are
 present:
 - gnomecal - personal calendar and todo list
 - gnomecard - contact list of friends and business associates
@@ -49,7 +49,7 @@ gettextize --copy --force
 LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--without-included-gettext
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
