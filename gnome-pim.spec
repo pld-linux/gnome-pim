@@ -95,10 +95,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/mime-info/gnome-pim.keys
+%{_libdir}/bonobo/servers/*
+%{_datadir}/gnome/apps/*/*
 %{_datadir}/idl/*
+%{_datadir}/mime-info/gnome-pim.keys
+%{_datadir}/gnomecard
+%{_omf_dest_dir}/*
 %{_pixmapsdir}/*
 %{_sysconfdir}/gconf/schemas/*
-%{_libdir}/bonobo/servers/*
-%{_omf_dest_dir}/*
-%{_datadir}/gnome/apps/*/*
