@@ -1,7 +1,7 @@
 Summary:	GNOME Personal Information Manager
-Summary(es): El administrador de informaciones personales del GNOME
+Summary(es):	El administrador de informaciones personales del GNOME
 Summary(pl):	Osobisty terminarz i mened¿er harmonogramów
-Summary(pt_BR): O gerenciador de informações pessoais do GNOME
+Summary(pt_BR):	O gerenciador de informações pessoais do GNOME
 Name:		gnome-pim
 Version:	1.4.0
 Release:	1
@@ -49,9 +49,9 @@ present:
 
 %description -l es
 El administrador de informaciones personales del GNOME consiste de
-aplicaciones para hacer su vida muy mas fácil. 
-Actualmente estas aplicaciones están presentes:
-- gnomecal:  calendario personal,
+aplicaciones para hacer su vida muy mas fácil. Actualmente estas
+aplicaciones están presentes:
+- gnomecal: calendario personal,
 - gnomecard: lista de contactos.
 
 %description -l pl
@@ -63,8 +63,8 @@ Aktualnie dwie aplikacje s± obecne:
 
 %description -l pt_BR
 O gerente de informações pessoais do GNOME consiste de aplicações para
-manter sua vida mais fácil. 
-Atualmente estes são os aplicativos disponíveis:
+manter sua vida mais fácil. Atualmente estes são os aplicativos
+disponíveis:
 - gnomecal : calendário pessoal e lista de coisas a fazer,
 - gnomecard: lista de contatos: amigos e parceiros comerciais.
 
