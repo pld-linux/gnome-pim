@@ -1,12 +1,11 @@
 Summary:	GNOME Personal Information Manager
 Name:		gnome-pim
-Version:	1.1.4
+Version:	1.1.5
 Release:	1
 License:	GPL
 Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
 Source:		ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-pim/%{name}-%{version}.tar.gz
-Patch0:		gnome-pim-applnkdir.patch
 Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
 Requires:	gnome-libs => 1.0.5
@@ -43,13 +42,10 @@ GNOME pim libraries, includes, etc.
 
 %prep
 %setup  -q
-%patch0 -p1
 
 %build
 gettextize --copy --force
-automake
-LDFLAGS="-s"
-export LDFLAGS
+LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--without-included-gettext
 make
@@ -57,7 +53,9 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make DESTDIR=$RPM_BUILD_ROOT install
+make install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	Productivitydir=%{_applnkdir}/Applications
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
