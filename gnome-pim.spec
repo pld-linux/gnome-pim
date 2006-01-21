@@ -19,7 +19,6 @@ Source0:	http://me.in-berlin.de/~jroger/gnome-pim/%{name}-%{version}.tar.gz
 # Source0-md5:	3aee416596b6b5a5f3f564700c73f562
 Patch0:		%{name}-desktop_location.patch
 Patch1:		%{name}-schemas.patch
-Icon:		gnome-pim.xpm
 URL:		http://www.gnome.org/
 BuildRequires:	libgnomeui-devel >= 2.1.90
 BuildRequires:	libmimedir-devel >= 0.2.1-1.20030114
