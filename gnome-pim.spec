@@ -109,6 +109,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnomecard
 %{_datadir}/gnomecal
 %{_omf_dest_dir}/*
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
 %{_sysconfdir}/gconf/schemas/*
