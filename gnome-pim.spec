@@ -2,13 +2,13 @@
 %define		snap		20030114
 
 Summary:	GNOME Personal Information Manager
-Summary(es):	El administrador de informaciones personales del GNOME
-Summary(ja):	The GNOME ╦д©м╬ПйС╢имЩ╔ч╔м║╪╔╦╔Ц
-Summary(pl):	Osobisty terminarz i zarz╠dzanie list╠ zadaЯ
-Summary(pt_BR):	O gerenciador de informaГУes pessoais do GNOME
-Summary(ru):	Персональный информационный менеджер (PIM) для GNOME
-Summary(uk):	Персональний ╕нформац╕йний менеджер (PIM) для GNOME
-Summary(zh_CN):	GNOME╦Жхкпео╒╧эюМ╧╓╬ъ
+Summary(es.UTF-8):   El administrador de informaciones personales del GNOME
+Summary(ja.UTF-8):   The GNOME Е─▀Д╨╨Ф┐┘Е═╠Г╝║Г░├Ц┐·Ц┐█Ц┐╪Ц┌╦Ц┐ё
+Summary(pl.UTF-8):   Osobisty terminarz i zarzд┘dzanie listд┘ zadaе└
+Summary(pt_BR.UTF-8):   O gerenciador de informaц╖ц╣es pessoais do GNOME
+Summary(ru.UTF-8):   п÷п╣я─я│п╬п╫п╟п╩я▄п╫я▀п╧ п╦п╫я└п╬я─п╪п╟я├п╦п╬п╫п╫я▀п╧ п╪п╣п╫п╣п╢п╤п╣я─ (PIM) п╢п╩я▐ GNOME
+Summary(uk.UTF-8):   п÷п╣я─я│п╬п╫п╟п╩я▄п╫п╦п╧ я√п╫я└п╬я─п╪п╟я├я√п╧п╫п╦п╧ п╪п╣п╫п╣п╢п╤п╣я─ (PIM) п╢п╩я▐ GNOME
+Summary(zh_CN.UTF-8):   GNOMEД╦╙Д╨╨Д©║Ф│╞Г╝║Г░├Е╥╔Е┘╥
 Name:		gnome-pim
 Version:	1.91.1
 Release:	1.%{snap}
@@ -32,46 +32,46 @@ present:
 - gnomecal : personal calendar and todo list,
 - gnomecard: contact list of friends and business associates.
 
-%description -l es
+%description -l es.UTF-8
 El administrador de informaciones personales del GNOME consiste de
-aplicaciones para hacer su vida muy mas fАcil. Actualmente estas
-aplicaciones estАn presentes:
+aplicaciones para hacer su vida muy mas fц║cil. Actualmente estas
+aplicaciones estц║n presentes:
 - gnomecal : calendario personal,
 - gnomecard: lista de contactos.
 
-%description -l ja
-GNOME ╦д©м╬ПйС╢имЩ╔ч╔м║╪╔╦╔Ц╓к╓о║╒к╩╓╥╓╓кХфЭ╓Р╓а╓Г╓ц╓хЁз╓к╓╥╓ф╓╞╓Л
-╓К╔╒╔в╔Й╔╠║╪╔╥╔Г╔С╓╛╢ч╓ч╓Л╓ф╓╓╓ч╓╧║ё
-╦╫╨ъ║╒╟й╡╪╓н╔╒╔в╔Й╔╠║╪╔╥╔Г╔С╓╛╩х╓╗╓ч╓╧:
-- gnomecal : ╔я║╪╔╫╔й╔К╓й╔╚╔Л╔С╔ю║╪╓х To Do ╔Й╔╧╔х
-- gnomecard: м╖©м╓Д╔с╔╦╔м╔╧╢ь╥╦╪т╓но╒мМюХ╔Й╔╧╔х
+%description -l ja.UTF-8
+GNOME Е─▀Д╨╨Ф┐┘Е═╠Г╝║Г░├Ц┐·Ц┐█Ц┐╪Ц┌╦Ц┐ёЦ│╚Ц│╞Ц─│Е©≥Ц│≈Ц│└Ф╞▌Ф≈╔Ц┌▓Ц│║Ц┌┤Ц│ёЦ│╗Ф╔╫Ц│╚Ц│≈Ц│╕Ц│▐Ц┌▄
+Ц┌▀Ц┌╒Ц┐≈Ц┐╙Ц┌╠Ц┐╪Ц┌╥Ц┐╖Ц┐ЁЦ│▄Е░╚Ц│╬Ц┌▄Ц│╕Ц│└Ц│╬Ц│≥Ц─┌
+Г▐╬Е°╗Ц─│Д╩╔Д╦▀Ц│╝Ц┌╒Ц┐≈Ц┐╙Ц┌╠Ц┐╪Ц┌╥Ц┐╖Ц┐ЁЦ│▄Д╫©Ц│┬Ц│╬Ц│≥:
+- gnomecal : Ц┐▒Ц┐╪Ц┌╫Ц┐┼Ц┐╚Ц│╙Ц┌╚Ц┐╛Ц┐ЁЦ┐─Ц┐╪Ц│╗ To Do Ц┐╙Ц┌╧Ц┐┬
+- gnomecard: Е▐▀Д╨╨Ц┌└Ц┐⌠Ц┌╦Ц┐█Ц┌╧И√╒Д©┌Х─┘Ц│╝И─ёГ╣║Е┘┬Ц┐╙Ц┌╧Ц┐┬
 
-%description -l pl
-Pakiet zawiera aplikacje czyni╠ce Twoje zapracowane ©ycie prostszym.
+%description -l pl.UTF-8
+Pakiet zawiera aplikacje czyniд┘ce Twoje zapracowane е╪ycie prostszym.
 Aktualnie zawiera dwie aplikacje:
-- gnomecal : prywatny terminarz i lista zadaЯ
-- gnomecard: notatnik z kontaktami przyjaciСЁ oraz partnerСw w
+- gnomecal : prywatny terminarz i lista zadaе└
+- gnomecard: notatnik z kontaktami przyjaciцЁе┌ oraz partnerцЁw w
   interesach.
 
-%description -l pt_BR
-O gerente de informaГУes pessoais do GNOME consiste de aplicaГУes para
-manter sua vida mais fАcil. Atualmente estes sЦo os aplicativos
-disponМveis:
-- gnomecal : calendАrio pessoal e lista de coisas a fazer,
+%description -l pt_BR.UTF-8
+O gerente de informaц╖ц╣es pessoais do GNOME consiste de aplicaц╖ц╣es para
+manter sua vida mais fц║cil. Atualmente estes sцёo os aplicativos
+disponц╜veis:
+- gnomecal : calendц║rio pessoal e lista de coisas a fazer,
 - gnomecard: lista de contatos: amigos e parceiros comerciais.
 
-%description -l ru
-Персональный информационный менеджер состоит из приложений,
-облегчающих жизнь занятых людей. В настоящее время это следующие
-программы:
-- gnomecal : персональный календарь и список дел (todo)
-- gnomecard: список контактов
+%description -l ru.UTF-8
+п÷п╣я─я│п╬п╫п╟п╩я▄п╫я▀п╧ п╦п╫я└п╬я─п╪п╟я├п╦п╬п╫п╫я▀п╧ п╪п╣п╫п╣п╢п╤п╣я─ я│п╬я│я┌п╬п╦я┌ п╦п╥ п©я─п╦п╩п╬п╤п╣п╫п╦п╧,
+п╬п╠п╩п╣пЁя┤п╟я▌я┴п╦я┘ п╤п╦п╥п╫я▄ п╥п╟п╫я▐я┌я▀я┘ п╩я▌п╢п╣п╧. п▓ п╫п╟я│я┌п╬я▐я┴п╣п╣ п╡я─п╣п╪я▐ я█я┌п╬ я│п╩п╣п╢я┐я▌я┴п╦п╣
+п©я─п╬пЁя─п╟п╪п╪я▀:
+- gnomecal : п©п╣я─я│п╬п╫п╟п╩я▄п╫я▀п╧ п╨п╟п╩п╣п╫п╢п╟я─я▄ п╦ я│п©п╦я│п╬п╨ п╢п╣п╩ (todo)
+- gnomecard: я│п©п╦я│п╬п╨ п╨п╬п╫я┌п╟п╨я┌п╬п╡
 
-%description -l uk
-Персональний ╕нформац╕йний менеджер склада╓ться з прикладних програм,
-що полегшують життя зайнятих людей. Нараз╕ це наступн╕ програми:
-- gnomecal : персональний календар та список справ (todo)
-- gnomecard: список контакт╕в
+%description -l uk.UTF-8
+п÷п╣я─я│п╬п╫п╟п╩я▄п╫п╦п╧ я√п╫я└п╬я─п╪п╟я├я√п╧п╫п╦п╧ п╪п╣п╫п╣п╢п╤п╣я─ я│п╨п╩п╟п╢п╟я■я┌я▄я│я▐ п╥ п©я─п╦п╨п╩п╟п╢п╫п╦я┘ п©я─п╬пЁя─п╟п╪,
+я┴п╬ п©п╬п╩п╣пЁя┬я┐я▌я┌я▄ п╤п╦я┌я┌я▐ п╥п╟п╧п╫я▐я┌п╦я┘ п╩я▌п╢п╣п╧. п²п╟я─п╟п╥я√ я├п╣ п╫п╟я│я┌я┐п©п╫я√ п©я─п╬пЁя─п╟п╪п╦:
+- gnomecal : п©п╣я─я│п╬п╫п╟п╩я▄п╫п╦п╧ п╨п╟п╩п╣п╫п╢п╟я─ я┌п╟ я│п©п╦я│п╬п╨ я│п©я─п╟п╡ (todo)
+- gnomecard: я│п©п╦я│п╬п╨ п╨п╬п╫я┌п╟п╨я┌я√п╡
 
 %prep
 %setup  -q
