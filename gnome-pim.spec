@@ -2,13 +2,13 @@
 %define		snap		20030114
 
 Summary:	GNOME Personal Information Manager
-Summary(es.UTF-8):   El administrador de informaciones personales del GNOME
-Summary(ja.UTF-8):   The GNOME 個人情報管理マネージャ
-Summary(pl.UTF-8):   Osobisty terminarz i zarządzanie listą zadań
-Summary(pt_BR.UTF-8):   O gerenciador de informações pessoais do GNOME
-Summary(ru.UTF-8):   Персональный информационный менеджер (PIM) для GNOME
-Summary(uk.UTF-8):   Персональний інформаційний менеджер (PIM) для GNOME
-Summary(zh_CN.UTF-8):   GNOME个人信息管理工具
+Summary(es.UTF-8):	El administrador de informaciones personales del GNOME
+Summary(ja.UTF-8):	The GNOME 個人情報管理マネージャ
+Summary(pl.UTF-8):	Osobisty terminarz i zarządzanie listą zadań
+Summary(pt_BR.UTF-8):	O gerenciador de informações pessoais do GNOME
+Summary(ru.UTF-8):	Персональный информационный менеджер (PIM) для GNOME
+Summary(uk.UTF-8):	Персональний інформаційний менеджер (PIM) для GNOME
+Summary(zh_CN.UTF-8):	GNOME个人信息管理工具
 Name:		gnome-pim
 Version:	1.91.1
 Release:	1.%{snap}
